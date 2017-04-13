@@ -38,10 +38,11 @@ class Task(models.Model):
     tag = models.ManyToManyField(
         Tag, related_name='task', verbose_name='Тэги')
     rate = models.IntegerField('Рейтинг', default=0)
-    # task_photo = models.ImageField(
-    #     'фото', upload_to='task_photos', 
-    #     default='tasks/static/task_photos/image.jpg', 
-    #     blank=True)
+
+    task_photo = models.ImageField(
+        'фото', upload_to='task_photos',
+        default='tasks/static/task_photos/image.jpg',
+        blank=True)
 
     class Meta:
         verbose_name = 'Задача'
