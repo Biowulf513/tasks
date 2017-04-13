@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>{% block title %}PayForward{% endblock %}</title>
+    {% load staticfiles %}
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" media="screen" href='/static/tasks/css/reset.css'>
+    <link rel="stylesheet" type="text/css" media="screen" href='/static/tasks/css/grid_12.css'>
+    <link rel="stylesheet" type="text/css" media="screen" href='/static/tasks/css/style.css'>
+    <link rel="stylesheet" type="text/css" media="screen" href='/static/tasks/css/slider.css'>
+    <link rel="stylesheet" type="text/css" media="screen" href='/static/tasks/css/jquery-ui-1.10.3.custom.min.css'>
+    <script src='/static/tasks/js/jquery-1.7.min.js'></script>
+    <script src='/static/tasks/js/jquery-ui-1.10.3.custom.min.js'></script>
+    <script src='/static/tasks/js/jquery.easing.1.3.js'></script>
+    <script src='/static/tasks/js/cufon-yui.js'></script>
+    <script src='/static/tasks/js/cufon-replace.js'></script>
+    <script src='/static/tasks/js/tms-0.4.1.js'></script>
+    {% block scripts %}{% endblock %}
+    <!--[if lt IE 9]>
+<script src="js/html5.js"></script>
+<link rel="stylesheet" type="text/css" media="screen" href="css/ie.css">
+<![endif]-->
+</head>
+<body>
+<header>
+    <div>
+        <div>
+            <h1><a href="/"><img src='/static/tasks/images/logo.png' alt=""></a></h1>
+            <nav>
+                <ul class="menu">
+                    <li><a href="/tasks">Просьбы</a></li>
+                    <li><a href="/people">Люди</a></li>
+                    <li><a href="/page/about">О нас</a></li>
+                    <li><a href="/comments">Обсуждение</a></li>
+                </ul>
+            </nav>
+            <div class="clear"></div>
+        </div>
+    </div>
+</header>
+{% block content %}{% endblock %}
+<!--==============================footer=================================-->
+<footer>
+    <p>© 2013 PayForward<br>
+        Сайт создан веб-студией  <a target="_blank" href="http://yourprofit.me/" class="link">Profit</a></p>
+    <div class="soc-icons"><span>Мы в соц. сетях	:</span>
+        <a href="#"><img src='/static/tasks/images/icon-1.jpg' alt=""></a>
+        <a href="#"><img src='/static/tasks/images/icon-2.jpg' alt=""></a>
+        <a href="#"><img src='/static/tasks/images/icon-3.jpg' alt=""></a>
+    </div>
+</footer>
+</body>
+</html>

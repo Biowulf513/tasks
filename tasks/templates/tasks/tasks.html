@@ -1,0 +1,29 @@
+{% extends 'tasks/base.html' %}
+{% block content %}
+<!--==============================content================================-->
+<section id="content">
+  <div class="container_12 top">
+    <div class="grid_12">
+        <div id="form" class="find">
+            <input type="text" value="Поиск" onblur="if(this.value=='') this.value='Поиск'" onfocus="if(this.value =='Поиск' ) this.value=''">
+        </div>
+      <h2 class="p5">Акктуальные просьбы</h2>
+    </div>
+    {% for task in tasks %}
+      <div class="grid_4">
+        <div> <img src="/static/tasks/images/page4-img1.jpg" alt="" class="img-border">
+          <p class="top-4">
+            <a href="{% url 'task' task.id %}" class="link">{{ task.title }}
+            </a>
+            <br>
+            {{ task.description }}
+          </p>
+          <a href="{% url 'task' task.id %}" class="button top-4">Подробнее</a> 
+        </div>
+      </div>
+    {% endfor %}
+    <div class="clear"></div>
+  </div>
+  </br>
+</section>
+{% endblock %}
