@@ -8,4 +8,5 @@ urlpatterns = [
     url(r'^tasks/$', views.tasks, name='tasks'),
     url(r'^profile/([0-9]+)?/$', views.profile, name='profile'),
     url(r'^people/$', views.people, name='people'),
+    url(r'^(?P<url>about/)$', 'django.contrib.flatpages.views.flatpage'),
 ]
