@@ -5,8 +5,12 @@
 {% block content %}
 
 <div id="create_task_dialog" title="Добавление просьбы">
-  <p>Добавьте вашу просьбу</p>
-  <textarea name="task_add" id="task_add" cols="30" rows="10"></textarea>    
+  <form method="POST" action='/create_task/' enctype="multipart/form-data" id="create_trask_form">
+    {% csrf_token %}|slice:'100'
+    {{ form.as_p}} 
+    <input type="submit" value="Добавить">
+  </form>
+  <!-- <textarea name="task_add" id="task_add" cols="30" rows="10"></textarea>     -->
 </div>
 <div id="slide">
   <div class="slider">
@@ -61,11 +65,11 @@
       <h2 class="top-1">Важные просьбы</h2>
 
       <div class="box-3">
-        {% for task in impotant_tasks %}
+        {% for task in important_tasks %}
           <div> 
             <img src='/static/tasks/images/page1-img3.jpg' alt="" class="img-border"> 
             <a href="{% url 'task' task.id %}" class="link-2">{{ task.title }}</a>
-            <p>{{ task.description }}</p>
+            <p>{{ task.description|slice:'100' }}</p>
           </div>
         {% endfor %}
       </div>
@@ -78,7 +82,7 @@
           <div class="box-6 top-5"> <img src='/static/tasks/images/page2-img2.jpg' alt="" class="img-indent img-border">
             <p>
               <a href="{% url 'task' task.id %}" class="link">{{ task.title }}</a><br>
-              {{ task.description }}
+              {{ task.description|slice:'100' }}
             </p>
           </div>
         {% endfor %}

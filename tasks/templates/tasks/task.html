@@ -5,8 +5,8 @@
   <div class="container_12 top">
     <div class="grid_8">
       <h2>{{ task.title }}</h2>
-      <div class="box-5 right-1"> <img src="/static/tasks/images/cats.jpg" width="560" alt="" class="img-border fleft">
-        <p class="p2">{{ task.description }}</p>
+      <div class="box-5 right-1"> <img src="/{{ task.task_photo }}" width="560" alt="" class="img-border fleft">
+        <p class="p2">{{ task.description|slice:'100' }}</p>
       </div>
  </div>
     <div class="grid_4">
@@ -15,7 +15,7 @@
       {% for more_task in more_tasks %}
         <div class="box-6 top-5"> <img src="/static/tasks/images/page2-img2.jpg" alt="" class="img-indent img-border">
           <p><a href="{% url 'task' more_task.id %}" class="link">{{ more_task.title }}</a><br>
-            {{ more_task.description }}<more_/p>
+            {{ more_task.description|slice:'100' }}</p>
         </div>
       {% endfor %}
 

@@ -16,7 +16,7 @@
             <a href="{% url 'task' task.id %}" class="link">{{ task.title }}
             </a>
             <br>
-            {{ task.description }}
+            {{ task.description|slice:'100' }}
           </p>
           <a href="{% url 'task' task.id %}" class="button top-4">Подробнее</a> 
         </div>

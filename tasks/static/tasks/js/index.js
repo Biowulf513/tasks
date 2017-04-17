@@ -1,14 +1,7 @@
 $(function() {
     $( "#create_task_dialog" ).dialog({
         autoOpen: false,
-        show: {
-            effect: "blind",
-            duration: 1000
-        },
-        hide: {
-            effect: "explode",
-            duration: 1000
-        }
+
     });
 
     $( "#create_task" ).click(function() {

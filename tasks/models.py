@@ -30,19 +30,17 @@ class Task(models.Model):
     title = models.CharField('Название задачи', max_length=50)
     description = models.TextField('Описание')
     create_date = models.DateTimeField('Дата создания', auto_now_add=True)
-    end_date = models.DateTimeField('Сроки задачи', blank=True)
-    user = models.ForeignKey(User, related_name='task',
-                             verbose_name='Автор задания')
+    end_date = models.DateTimeField('Сроки задачи', blank=True, null=True)
+    user = models.ForeignKey(User, related_name='task', verbose_name='Автор задания',
+                             blank=True, null=True)
     category = models.ForeignKey(
         Category, related_name='task', verbose_name='Категоия')
-    tag = models.ManyToManyField(
-        Tag, related_name='task', verbose_name='Тэги')
+    # tag = models.ManyToManyField(
+    #     Tag, related_name='task', verbose_name='Тэги')
     rate = models.IntegerField('Рейтинг', default=0)
 
     task_photo = models.ImageField(
-        'фото', upload_to='task_photos',
-        default='tasks/static/task_photos/image.jpg',
-        blank=True)
+        'фото', upload_to='home/toor/django/tasks_django/tasks/static/tasks/update_photos/',blank=True)
 
     class Meta:
         verbose_name = 'Задача'
